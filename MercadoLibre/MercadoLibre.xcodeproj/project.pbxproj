@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6AC5798C2517E00F00592CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC5798B2517E00F00592CAD /* AppDelegate.swift */; };
+		6AC5798E2517E00F00592CAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC5798D2517E00F00592CAD /* SceneDelegate.swift */; };
+		6AC579902517E00F00592CAD /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC5798F2517E00F00592CAD /* ProductsViewController.swift */; };
+		6AC579952517E01100592CAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC579942517E01100592CAD /* Assets.xcassets */; };
+		6AC579982517E01100592CAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC579962517E01100592CAD /* LaunchScreen.storyboard */; };
+		6AC579A32517E01200592CAD /* MercadoLibreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC579A22517E01200592CAD /* MercadoLibreTests.swift */; };
+		6AC579AE2517E0EA00592CAD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC579AD2517E0EA00592CAD /* MainCoordinator.swift */; };
+		6AC579B52517E16200592CAD /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC579B42517E16200592CAD /* CoordinatorProtocol.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6AC5799F2517E01200592CAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AC579802517E00F00592CAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AC579872517E00F00592CAD;
+			remoteInfo = MercadoLibre;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6AC579882517E00F00592CAD /* MercadoLibre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercadoLibre.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC5798B2517E00F00592CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6AC5798D2517E00F00592CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6AC5798F2517E00F00592CAD /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		6AC579942517E01100592CAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6AC579972517E01100592CAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6AC579992517E01100592CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AC5799E2517E01200592CAD /* MercadoLibreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MercadoLibreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC579A22517E01200592CAD /* MercadoLibreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercadoLibreTests.swift; sourceTree = "<group>"; };
+		6AC579A42517E01200592CAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AC579AD2517E0EA00592CAD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		6AC579B42517E16200592CAD /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6AC579852517E00F00592CAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AC5799B2517E01200592CAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6AC5797F2517E00F00592CAD = {
+			isa = PBXGroup;
+			children = (
+				6AC5798A2517E00F00592CAD /* MercadoLibre */,
+				6AC579A12517E01200592CAD /* MercadoLibreTests */,
+				6AC579892517E00F00592CAD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6AC579892517E00F00592CAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6AC579882517E00F00592CAD /* MercadoLibre.app */,
+				6AC5799E2517E01200592CAD /* MercadoLibreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6AC5798A2517E00F00592CAD /* MercadoLibre */ = {
+			isa = PBXGroup;
+			children = (
+				6AC5798B2517E00F00592CAD /* AppDelegate.swift */,
+				6AC5798D2517E00F00592CAD /* SceneDelegate.swift */,
+				6AC579B32517E12400592CAD /* Coordinator */,
+				6AC579B22517E11A00592CAD /* Model */,
+				6AC579B12517E11400592CAD /* View */,
+				6AC579B02517E10F00592CAD /* Presenter */,
+				6AC579AF2517E10700592CAD /* Protocols */,
+				6AC579942517E01100592CAD /* Assets.xcassets */,
+				6AC579962517E01100592CAD /* LaunchScreen.storyboard */,
+				6AC579992517E01100592CAD /* Info.plist */,
+			);
+			path = MercadoLibre;
+			sourceTree = "<group>";
+		};
+		6AC579A12517E01200592CAD /* MercadoLibreTests */ = {
+			isa = PBXGroup;
+			children = (
+				6AC579A22517E01200592CAD /* MercadoLibreTests.swift */,
+				6AC579A42517E01200592CAD /* Info.plist */,
+			);
+			path = MercadoLibreTests;
+			sourceTree = "<group>";
+		};
+		6AC579AF2517E10700592CAD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6AC579B42517E16200592CAD /* CoordinatorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		6AC579B02517E10F00592CAD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		6AC579B12517E11400592CAD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6AC5798F2517E00F00592CAD /* ProductsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6AC579B22517E11A00592CAD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6AC579B32517E12400592CAD /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6AC579AD2517E0EA00592CAD /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6AC579872517E00F00592CAD /* MercadoLibre */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AC579A72517E01200592CAD /* Build configuration list for PBXNativeTarget "MercadoLibre" */;
+			buildPhases = (
+				6AC579842517E00F00592CAD /* Sources */,
+				6AC579852517E00F00592CAD /* Frameworks */,
+				6AC579862517E00F00592CAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MercadoLibre;
+			productName = MercadoLibre;
+			productReference = 6AC579882517E00F00592CAD /* MercadoLibre.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6AC5799D2517E01200592CAD /* MercadoLibreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AC579AA2517E01200592CAD /* Build configuration list for PBXNativeTarget "MercadoLibreTests" */;
+			buildPhases = (
+				6AC5799A2517E01200592CAD /* Sources */,
+				6AC5799B2517E01200592CAD /* Frameworks */,
+				6AC5799C2517E01200592CAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6AC579A02517E01200592CAD /* PBXTargetDependency */,
+			);
+			name = MercadoLibreTests;
+			productName = MercadoLibreTests;
+			productReference = 6AC5799E2517E01200592CAD /* MercadoLibreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6AC579802517E00F00592CAD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Gaston Daniel Gabriel Grippi";
+				TargetAttributes = {
+					6AC579872517E00F00592CAD = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					6AC5799D2517E01200592CAD = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 6AC579872517E00F00592CAD;
+					};
+				};
+			};
+			buildConfigurationList = 6AC579832517E00F00592CAD /* Build configuration list for PBXProject "MercadoLibre" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6AC5797F2517E00F00592CAD;
+			productRefGroup = 6AC579892517E00F00592CAD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6AC579872517E00F00592CAD /* MercadoLibre */,
+				6AC5799D2517E01200592CAD /* MercadoLibreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6AC579862517E00F00592CAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AC579982517E01100592CAD /* LaunchScreen.storyboard in Resources */,
+				6AC579952517E01100592CAD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AC5799C2517E01200592CAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6AC579842517E00F00592CAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AC579902517E00F00592CAD /* ProductsViewController.swift in Sources */,
+				6AC579AE2517E0EA00592CAD /* MainCoordinator.swift in Sources */,
+				6AC579B52517E16200592CAD /* CoordinatorProtocol.swift in Sources */,
+				6AC5798C2517E00F00592CAD /* AppDelegate.swift in Sources */,
+				6AC5798E2517E00F00592CAD /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AC5799A2517E01200592CAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AC579A32517E01200592CAD /* MercadoLibreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6AC579A02517E01200592CAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6AC579872517E00F00592CAD /* MercadoLibre */;
+			targetProxy = 6AC5799F2517E01200592CAD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6AC579962517E01100592CAD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AC579972517E01100592CAD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6AC579A52517E01200592CAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6AC579A62517E01200592CAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6AC579A82517E01200592CAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MercadoLibre/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gaston.grippi.MercadoLibre;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6AC579A92517E01200592CAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MercadoLibre/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gaston.grippi.MercadoLibre;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6AC579AB2517E01200592CAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MercadoLibreTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gaston.grippi.MercadoLibreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MercadoLibre.app/MercadoLibre";
+			};
+			name = Debug;
+		};
+		6AC579AC2517E01200592CAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MercadoLibreTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = gaston.grippi.MercadoLibreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MercadoLibre.app/MercadoLibre";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6AC579832517E00F00592CAD /* Build configuration list for PBXProject "MercadoLibre" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AC579A52517E01200592CAD /* Debug */,
+				6AC579A62517E01200592CAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AC579A72517E01200592CAD /* Build configuration list for PBXNativeTarget "MercadoLibre" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AC579A82517E01200592CAD /* Debug */,
+				6AC579A92517E01200592CAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AC579AA2517E01200592CAD /* Build configuration list for PBXNativeTarget "MercadoLibreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AC579AB2517E01200592CAD /* Debug */,
+				6AC579AC2517E01200592CAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6AC579802517E00F00592CAD /* Project object */;
+}
