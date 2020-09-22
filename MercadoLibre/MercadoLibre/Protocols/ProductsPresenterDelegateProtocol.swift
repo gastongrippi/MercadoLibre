@@ -14,6 +14,6 @@ protocol ProductsPresenterDelegateProtocol {
     func loadProducts(_ products: String)
     func getProductsCount() -> Int
     func getProductName(index: IndexPath) -> String
-    func getProductImage(index: IndexPath) -> String
+    func getProductImageURL(index: IndexPath) -> URL
     func getProductCondition(index: IndexPath) -> String
 }

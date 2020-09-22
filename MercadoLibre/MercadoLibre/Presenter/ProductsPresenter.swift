@@ -39,12 +39,12 @@ class ProductsPresenter: ProductsPresenterDelegateProtocol {
         return products[index.row].name
     }
     
-    func getProductImage(index: IndexPath) -> String {
-        return products[index.row].imageURL
+    func getProductImageURL(index: IndexPath) -> URL {
+        return URL(string: products[index.row].imageURL)!
     }
     
     func getProductCondition(index: IndexPath) -> String {
-        return products[index.row].condition
+        return "Condition: \(products[index.row].condition)"
     }
     
     

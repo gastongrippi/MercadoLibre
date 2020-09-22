@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 //MARK: UITableViewDataSource
 extension ProductsView: UITableViewDataSource {
@@ -15,8 +16,10 @@ extension ProductsView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = productViewDelegate?.getProductName(index: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ProductsTable.reuseIdentifier) as! ProductsTableViewCell
+        cell.productName.text = productViewDelegate?.getProductName(index: indexPath)
+        cell.productCondition.text = productViewDelegate?.getProductCondition(index: indexPath)        
+        cell.productImage.sd_setImage(with: productViewDelegate?.getProductImageURL(index: indexPath), placeholderImage: UIImage(named: Constants.ProductsTable.placeHolderID),completed: nil)
         
         return cell
     }

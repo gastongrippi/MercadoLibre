@@ -32,6 +32,7 @@ class ProductsView: UIViewController {
         super.viewDidLoad()
         title = Constants.Titles.products
         setDelegates()
+        customizeProductTableView()
         setViewsConstraints()
     }
     
@@ -40,6 +41,12 @@ class ProductsView: UIViewController {
         productsSearchBar.delegate = self
         productsTableView.delegate = self
         productsTableView.dataSource = self
+    }
+    
+    private func customizeProductTableView() {
+        productsTableView.translatesAutoresizingMaskIntoConstraints = false
+        productsTableView.rowHeight = UITableView.automaticDimension
+        productsTableView.register(ProductsTableViewCell.self, forCellReuseIdentifier: Constants.ProductsTable.reuseIdentifier)
     }
     
     private func setViewsConstraints() {

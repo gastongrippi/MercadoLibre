@@ -21,4 +21,9 @@ struct Constants {
     struct Endpoint {
         static let productSearch = "https://api.mercadolibre.com/sites/MLA/search?q="
     }
+    
+    struct ProductsTable {
+        static let reuseIdentifier = "productsCell"
+        static let placeHolderID = "productCellPlaceHolder"
+    }
 }
