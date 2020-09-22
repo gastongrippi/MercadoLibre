@@ -12,6 +12,6 @@ import UIKit
 protocol CoordinatorProtocol {
     var navigationController: UINavigationController? { get set }
     func initialViewController() -> UIViewController 
-    func showProductsView()
+    func showProductsViewWithData(_ data: SearchDTO)
     func navigateToProductDetail()
 }

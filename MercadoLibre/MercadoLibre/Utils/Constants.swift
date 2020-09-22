@@ -11,6 +11,7 @@ import UIKit
 
 struct Constants {
     struct Titles {
+        static let welcome = "Welcome to Mercado Libre"
         static let products = "Mercado Libre Products"
     }
     
@@ -25,5 +26,9 @@ struct Constants {
     struct ProductsTable {
         static let reuseIdentifier = "productsCell"
         static let placeHolderID = "productCellPlaceHolder"
+    }
+    
+    struct Branding {
+        static let primaryColor = UIColor(red: 247/255.0, green: 234/255.0, blue: 31/255.0, alpha: 1)
     }
 }

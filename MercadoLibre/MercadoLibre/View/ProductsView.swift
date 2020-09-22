@@ -12,14 +12,15 @@ class ProductsView: UIViewController {
     
     // MARK: Properties
     weak var coordinator: MainCoordinator?
-    var productsSearchBar = UISearchBar(frame: .zero)
     var productsTableView = UITableView(frame: .zero)
     var productViewDelegate: ProductsPresenterDelegateProtocol?
+    var searchData: SearchDTO?
     
     // MARK: Initializer
-    init(delegate: ProductsPresenterDelegateProtocol) {
+    init(delegate: ProductsPresenterDelegateProtocol, searchData: SearchDTO) {
         super.init(nibName: nil, bundle: nil)
         productViewDelegate = delegate
+        self.searchData = searchData
     }
     
     @available(*, unavailable)
@@ -34,11 +35,11 @@ class ProductsView: UIViewController {
         setDelegates()
         customizeProductTableView()
         setViewsConstraints()
+        productViewDelegate?.loadProducts(searchData?.searchText ?? "")
     }
     
     //MARK: private methods
     private func setDelegates() {
-        productsSearchBar.delegate = self
         productsTableView.delegate = self
         productsTableView.dataSource = self
     }
@@ -50,21 +51,12 @@ class ProductsView: UIViewController {
     }
     
     private func setViewsConstraints() {
-        view.addSubview(productsSearchBar)
-        productsSearchBar.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            productsSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            productsSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            productsSearchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: getNavigationBarHeight()),
-            productsSearchBar.heightAnchor.constraint(equalToConstant: Constants.Constraint.searchBarHeight)
-        ])
-        
         view.addSubview(productsTableView)
         productsTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             productsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             productsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            productsTableView.topAnchor.constraint(equalTo: productsSearchBar.bottomAnchor),
+            productsTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: getNavigationBarHeight()),
             productsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }

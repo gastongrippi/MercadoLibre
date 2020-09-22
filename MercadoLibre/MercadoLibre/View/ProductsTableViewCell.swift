@@ -42,6 +42,7 @@ class ProductsTableViewCell: UITableViewCell {
     private func customizeProductConditionView() {
         productCondition.translatesAutoresizingMaskIntoConstraints = false
         productCondition.numberOfLines = 0
+        productCondition.textColor = .gray
     }
     
     private func addConstraints() {
