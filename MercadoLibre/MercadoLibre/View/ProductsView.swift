@@ -8,17 +8,29 @@
 
 import UIKit
 
-class ProductsViewController: UIViewController {
+class ProductsView: UIViewController {
     
     // MARK: Properties
     weak var coordinator: MainCoordinator?
-    lazy var productsSearchBar = UISearchBar(frame: .zero)
-    lazy var productsTableView = UITableView(frame: .zero)
+    var productsSearchBar = UISearchBar(frame: .zero)
+    var productsTableView = UITableView(frame: .zero)
+    var productViewDelegate: ProductsPresenterDelegateProtocol?
+    
+    // MARK: Initializer
+    init(delegate: ProductsPresenterDelegateProtocol) {
+        super.init(nibName: nil, bundle: nil)
+        productViewDelegate = delegate
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Mercado Libre Products"
+        title = Constants.Titles.products
         setDelegates()
         setViewsConstraints()
     }
@@ -37,7 +49,7 @@ class ProductsViewController: UIViewController {
             productsSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             productsSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             productsSearchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: getNavigationBarHeight()),
-            productsSearchBar.heightAnchor.constraint(equalToConstant: 50)
+            productsSearchBar.heightAnchor.constraint(equalToConstant: Constants.Constraint.searchBarHeight)
         ])
         
         view.addSubview(productsTableView)
@@ -48,5 +60,14 @@ class ProductsViewController: UIViewController {
             productsTableView.topAnchor.constraint(equalTo: productsSearchBar.bottomAnchor),
             productsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+    }
+}
+
+
+extension ProductsView: ProductsViewDelegateProtocol {
+    func reloadProductsTable() {
+        DispatchQueue.main.async {
+            self.productsTableView.reloadData()
+        }
     }
 }

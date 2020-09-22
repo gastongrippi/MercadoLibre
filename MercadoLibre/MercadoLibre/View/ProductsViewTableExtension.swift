@@ -9,13 +9,14 @@
 import UIKit
 
 //MARK: UITableViewDataSource
-extension ProductsViewController: UITableViewDataSource {
+extension ProductsView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return productViewDelegate?.getProductsCount() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        cell.textLabel?.text = productViewDelegate?.getProductName(index: indexPath)
         
         return cell
     }
@@ -23,6 +24,6 @@ extension ProductsViewController: UITableViewDataSource {
 }
 
 //MARK: UITableViewDelegate
-extension ProductsViewController: UITableViewDelegate {
+extension ProductsView: UITableViewDelegate {
     
 }

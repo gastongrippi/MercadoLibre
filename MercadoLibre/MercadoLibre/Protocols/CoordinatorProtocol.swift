@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 protocol CoordinatorProtocol {
-    var navigationController: UINavigationController { get set }
+    var navigationController: UINavigationController? { get set }
+    func initialViewController() -> UIViewController 
     func showProductsView()
     func navigateToProductDetail()
 }

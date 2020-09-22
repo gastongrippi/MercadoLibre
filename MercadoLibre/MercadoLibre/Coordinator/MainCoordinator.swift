@@ -9,21 +9,33 @@
 import UIKit
 
 class MainCoordinator: CoordinatorProtocol {
-    var navigationController: UINavigationController
-
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
+    var navigationController: UINavigationController?
 
     //MARK: CoordinatorProtocol
-    func showProductsView() {
-        let vc = ProductsViewController()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: false)
+    func initialViewController() -> UIViewController {
+        navigationController =  UINavigationController(rootViewController: createProductsView())
+        return navigationController!
     }
-    
+
+    func showProductsView() {
+        let vc = createProductsView()
+        navigationController?.show(vc, sender: self)
+    }
+
     func navigateToProductDetail() {
         
     }
 
+}
+
+extension MainCoordinator {
+    func createProductsView() -> UIViewController {
+        let service = ProductsService()
+        let presenter = ProductsPresenter(service: service)
+        let viewController = ProductsView(delegate: presenter)
+        viewController.coordinator = self
+        presenter.view = viewController
+        
+        return viewController
+    }
 }
