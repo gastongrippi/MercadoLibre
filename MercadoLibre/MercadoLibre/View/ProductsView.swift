@@ -12,12 +12,12 @@ class ProductsView: UIViewController {
     
     // MARK: Properties
     weak var coordinator: MainCoordinator?
-    var productsTableView = UITableView(frame: .zero)
-    var productViewDelegate: ProductsPresenterDelegateProtocol?
-    var searchData: SearchDTO?
+    private var productsTableView = UITableView(frame: .zero)
+    var productViewDelegate: ProductsDelegateProtocol?
+    private var searchData: SearchDTO?
     
     // MARK: Initializer
-    init(delegate: ProductsPresenterDelegateProtocol, searchData: SearchDTO) {
+    init(delegate: ProductsDelegateProtocol, searchData: SearchDTO) {
         super.init(nibName: nil, bundle: nil)
         productViewDelegate = delegate
         self.searchData = searchData
@@ -35,7 +35,7 @@ class ProductsView: UIViewController {
         setDelegates()
         customizeProductTableView()
         setViewsConstraints()
-        productViewDelegate?.loadProducts(searchData?.searchText ?? "")
+        loadProducts()
     }
     
     //MARK: private methods
@@ -52,13 +52,20 @@ class ProductsView: UIViewController {
     
     private func setViewsConstraints() {
         view.addSubview(productsTableView)
-        productsTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             productsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             productsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             productsTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: getNavigationBarHeight()),
             productsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+    }
+    
+    private func loadProducts() {
+        if let searchText = searchData?.searchText {
+            productViewDelegate?.loadProducts(searchText)
+        } else {
+            print("Can not look up results with an empty search text")
+        }
     }
 }
 

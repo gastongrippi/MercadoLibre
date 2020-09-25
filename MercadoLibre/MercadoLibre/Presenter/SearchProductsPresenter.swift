@@ -8,12 +8,11 @@
 
 import Foundation
 
-class SearchProductsPresenter: SearchProductsPresenterDelegateProtocol {
+class SearchProductsPresenter: SearchProductsDelegateProtocol {
     weak var view: SearchProductsView?
     
     func sendSearchText(_ searchText: String) {
-        var searchData = SearchDTO()
-        searchData.searchText = searchText
+        let searchData = SearchDTO(searchText: searchText)
         view?.coordinator?.showProductsViewWithData(searchData)
     }
 }

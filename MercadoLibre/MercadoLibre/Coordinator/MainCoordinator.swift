@@ -18,12 +18,17 @@ class MainCoordinator: CoordinatorProtocol {
     }
 
     func showProductsViewWithData(_ data: SearchDTO) {
-        let vc = createProductsView(data: data)
-        navigationController?.show(vc, sender: self)
+        let viewController = createProductsView(data: data)
+        navigationController?.show(viewController, sender: self)
     }
 
-    func navigateToProductDetail() {
-        
+    func showProductDetailWithData(_ data: ProductDTO) {
+        let service = ProductsService()
+        let presenter = ProductDetailPresenter(service: service)
+        let viewController = ProductDetailView(delegate: presenter, productData: data)
+        viewController.coordinator = self
+        presenter.view = viewController
+        navigationController?.show(viewController, sender: self)
     }
 
 }
@@ -34,7 +39,6 @@ extension MainCoordinator {
         let viewController = SearchProductsView(delegate: presenter)
         presenter.view = viewController
         viewController.coordinator = self
-        
         
         return viewController
     }

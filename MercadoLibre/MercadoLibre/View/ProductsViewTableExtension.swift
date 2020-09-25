@@ -28,5 +28,10 @@ extension ProductsView: UITableViewDataSource {
 
 //MARK: UITableViewDelegate
 extension ProductsView: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let productId = productViewDelegate?.getProductId(index: indexPath)
+        let productPrice = productViewDelegate?.getProductPrice(index: indexPath)
+        let productDetail = ProductDTO(id: productId, price: productPrice)
+        coordinator?.showProductDetailWithData(productDetail)
+    }
 }

@@ -15,11 +15,15 @@ struct ProductResponse: Codable {
 struct Product: Codable {
     //MARK: Properties
     let name: String
+    let id: String
+    let price: Double
     let imageURL: String
     let condition: String
     
     enum CodingKeys: String, CodingKey {
         case name = "title"
+        case id
+        case price
         case imageURL = "thumbnail"
         case condition
     }

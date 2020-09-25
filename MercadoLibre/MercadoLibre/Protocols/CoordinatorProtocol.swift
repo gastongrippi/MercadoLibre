@@ -13,5 +13,5 @@ protocol CoordinatorProtocol {
     var navigationController: UINavigationController? { get set }
     func initialViewController() -> UIViewController 
     func showProductsViewWithData(_ data: SearchDTO)
-    func navigateToProductDetail()
+    func showProductDetailWithData(_ data: ProductDTO)
 }

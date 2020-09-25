@@ -1,5 +1,5 @@
 //
-//  SearchProductsPresenterDelegateProtocol.swift
+//  SearchProductsDelegateProtocol.swift
 //  MercadoLibre
 //
 //  Created by Gaston Daniel Gabriel Grippi on 22/09/2020.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol SearchProductsPresenterDelegateProtocol {
+protocol SearchProductsDelegateProtocol {
     func sendSearchText(_ searchText: String)
 }

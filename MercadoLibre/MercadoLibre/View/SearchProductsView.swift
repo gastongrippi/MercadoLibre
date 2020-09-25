@@ -10,12 +10,12 @@ import UIKit
 
 class SearchProductsView: UIViewController {
     weak var coordinator: MainCoordinator?
-    var mercadoLibreLogo = UIImageView(frame: .zero)
-    var productsSearchBar = UISearchBar(frame: .zero)
-    var searchProductsViewDelegate: SearchProductsPresenterDelegateProtocol?
+    private var mercadoLibreLogo = UIImageView(frame: .zero)
+    private var productsSearchBar = UISearchBar(frame: .zero)
+    var searchProductsViewDelegate: SearchProductsDelegateProtocol?
 
     // MARK: Initializer
-    init(delegate: SearchProductsPresenterDelegateProtocol) {
+    init(delegate: SearchProductsDelegateProtocol) {
         super.init(nibName: nil, bundle: nil)
         searchProductsViewDelegate = delegate
     }

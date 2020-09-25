@@ -13,6 +13,7 @@ struct Constants {
     struct Titles {
         static let welcome = "Welcome to Mercado Libre"
         static let products = "Mercado Libre Products"
+        static let details = "Product details"
     }
     
     struct Constraint {
@@ -21,6 +22,7 @@ struct Constants {
     
     struct Endpoint {
         static let productSearch = "https://api.mercadolibre.com/sites/MLA/search?q="
+        static let productDetail = "https://api.mercadolibre.com/items/"
     }
     
     struct ProductsTable {

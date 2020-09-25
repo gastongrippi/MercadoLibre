@@ -8,4 +8,8 @@
 
 struct SearchDTO {
     var searchText: String?
+    
+    init(searchText: String?) {
+        self.searchText = searchText
+    }
 }

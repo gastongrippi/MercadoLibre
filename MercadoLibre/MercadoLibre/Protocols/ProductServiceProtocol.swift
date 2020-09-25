@@ -6,8 +6,7 @@
 //  Copyright © 2020 Gaston Daniel Gabriel Grippi. All rights reserved.
 //
 
-import Foundation
-
 protocol ProductServiceProtocol {
     func getProductsWithName(_ name:String, successBlock: @escaping (ProductResponse) -> (), errorBlock: @escaping (Error) -> ())
+    func getProductDetailWithId(_ id: String, successBlock: @escaping (ProductDetail) -> (), errorBlock: @escaping (Error) -> ())
 }

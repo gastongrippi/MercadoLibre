@@ -7,19 +7,19 @@
 //
 import Foundation
 
-class ProductsPresenter: ProductsPresenterDelegateProtocol {
+class ProductsPresenter: ProductsDelegateProtocol {
     
     //MARK: Properties
     lazy private var products = [Product]()
     private let service: ProductServiceProtocol?
-    weak var view: ProductsViewDelegateProtocol?
+    var view: ProductsViewDelegateProtocol?
     
     //MARK: Initializer
     init(service: ProductServiceProtocol) {
         self.service = service
     }
     
-    //MARK: ProductsPresenterDelegateProtocold
+    //MARK: ProductsPresenterDelegateProtocol
     func loadProducts(_ products: String) {
         service?.getProductsWithName(products, successBlock: { [weakSelf=self] response in
             for product in response.results {
@@ -47,5 +47,12 @@ class ProductsPresenter: ProductsPresenterDelegateProtocol {
         return "Condition: \(products[index.row].condition)"
     }
     
+    func getProductId(index: IndexPath) -> String {
+        return products[index.row].id
+    }
+    
+    func getProductPrice(index: IndexPath) -> Double {
+        return products[index.row].price
+    }
     
 }
