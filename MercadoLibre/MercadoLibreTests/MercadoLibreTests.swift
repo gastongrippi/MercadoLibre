@@ -9,7 +9,7 @@
 import XCTest
 @testable import MercadoLibre
 
-class MercadoLibreTests: XCTestCase {
+class SearchBarPresenterTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -19,9 +19,13 @@ class MercadoLibreTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSearchTextExample() throws {
+        let searchPresenter = SearchProductsPresenter()
+        let searchProductsViewMock = SearchProductsViewControllerMock()
+        searchPresenter.view = searchProductsViewMock
+        searchPresenter.sendSearchText("test")
+        XCTAssertEqual(searchProductsViewMock.navigateToProductViewWithDataCount, 1)
+        XCTAssertEqual(searchProductsViewMock.searchText, "test")
     }
 
     func testPerformanceExample() throws {
@@ -31,4 +35,16 @@ class MercadoLibreTests: XCTestCase {
         }
     }
 
+}
+
+
+class SearchProductsViewControllerMock :SearchProductsViewDelegateProtocol {
+    var navigateToProductViewWithDataCount = 0
+    var searchText: String?
+    
+    func navigateToProductViewWithData(_ data: SearchDTO) {
+        navigateToProductViewWithDataCount = 1
+        searchText = data.searchText
+    }
+    
 }

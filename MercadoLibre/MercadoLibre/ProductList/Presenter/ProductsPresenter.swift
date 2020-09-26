@@ -21,13 +21,18 @@ class ProductsPresenter: ProductsDelegateProtocol {
     
     //MARK: ProductsPresenterDelegateProtocol
     func loadProducts(_ products: String) {
+        self.products = []
         service?.getProductsWithName(products, successBlock: { [weakSelf=self] response in
-            for product in response.results {
-                weakSelf.products.append(product)
+            if (response.results.isEmpty) {
+                weakSelf.view?.showEmptyProductsError()
+            } else {
+                for product in response.results {
+                    weakSelf.products.append(product)
+                }
+                weakSelf.view?.reloadProductsTable()
             }
-            weakSelf.view?.reloadProductsTable()
-        }, errorBlock: { error in
-            print(error)
+        }, errorBlock: { [weakSelf=self] error in
+            weakSelf.view?.showErrorConnectionProblem()
         })
     }
     

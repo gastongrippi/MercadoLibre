@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SearchProductsDelegateProtocol {
-    func sendSearchText(_ searchText: String)
+    func sendSearchText(_ searchText: String?)
 }

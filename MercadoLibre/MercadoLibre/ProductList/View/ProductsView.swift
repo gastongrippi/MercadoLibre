@@ -64,7 +64,15 @@ class ProductsView: UIViewController {
         if let searchText = searchData?.searchText {
             productViewDelegate?.loadProducts(searchText)
         } else {
-            print("Can not look up results with an empty search text")
+            self.showErrorEmptySearchText()
+        }
+    }
+    
+    private func showErrorEmptySearchText() {
+        DispatchQueue.main.async { [unowned self] in
+            self.showErrorWithMessage(Constants.ErrorMessages.emptySearchText, completionBlock: { [weakSelf=self] in
+                weakSelf.coordinator?.navigationController?.popViewController(animated: true)
+            })
         }
     }
 }
@@ -72,8 +80,24 @@ class ProductsView: UIViewController {
 
 extension ProductsView: ProductsViewDelegateProtocol {
     func reloadProductsTable() {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [unowned self] in
             self.productsTableView.reloadData()
+        }
+    }
+    
+    func showEmptyProductsError() {
+        DispatchQueue.main.async { [unowned self] in
+            self.showErrorWithMessage(Constants.ErrorMessages.emptyProductList, completionBlock: { [weakSelf=self] in
+                weakSelf.coordinator?.navigationController?.popViewController(animated: true)
+            })
+        }
+    }
+    
+    func showErrorConnectionProblem() {
+        DispatchQueue.main.async { [unowned self] in
+            self.showErrorWithMessage(Constants.ErrorMessages.internetConnectionFailed, completionBlock: { [weakSelf=self] in
+                weakSelf.coordinator?.navigationController?.popViewController(animated: true)
+            })
         }
     }
 }

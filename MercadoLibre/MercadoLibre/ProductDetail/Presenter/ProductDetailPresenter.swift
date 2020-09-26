@@ -12,11 +12,11 @@ class ProductDetailPresenter: ProductDetailDelegateProtocol {
     
     //MARK: Properties
     private var productDetail: ProductDetail?
-    private let service: ProductServiceProtocol?
+    private let service: ProductDetailServiceProtocol?
     var view: ProductDetailViewDelegateProtocol?
     
     //MARK: Initializer
-    init(service: ProductServiceProtocol) {
+    init(service: ProductDetailServiceProtocol) {
         self.service = service
     }
     

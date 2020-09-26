@@ -10,4 +10,6 @@ import Foundation
 
 protocol ProductsViewDelegateProtocol: class {
     func reloadProductsTable()
+    func showEmptyProductsError()
+    func showErrorConnectionProblem()
 }

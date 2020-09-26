@@ -33,4 +33,10 @@ struct Constants {
     struct Branding {
         static let primaryColor = UIColor(red: 247/255.0, green: 234/255.0, blue: 31/255.0, alpha: 1)
     }
+    
+    struct ErrorMessages {
+        static let emptySearchText = "Insert some text to search"
+        static let emptyProductList = "No results for your search. Try to look up for something else"
+        static let internetConnectionFailed = "There was a problem with your internet connection. Please try again later"
+    }
 }

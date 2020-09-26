@@ -48,9 +48,9 @@ class SearchProductsView: UIViewController {
     
     private func customizeSearchBar() {
         productsSearchBar.translatesAutoresizingMaskIntoConstraints = false
-        productsSearchBar.inputView?.backgroundColor = .red
         productsSearchBar.searchTextField.layer.cornerRadius = 20
         productsSearchBar.searchTextField.layer.masksToBounds = true
+        productsSearchBar.placeholder = "What are you looking for?"
     }
     
     private func setDelegates() {
@@ -79,8 +79,16 @@ class SearchProductsView: UIViewController {
 
 extension SearchProductsView: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let searchText = searchBar.text {
-            searchProductsViewDelegate?.sendSearchText(searchText)
-        }
+        searchProductsViewDelegate?.sendSearchText(searchBar.text)
+    }
+}
+
+extension SearchProductsView: SearchProductsViewDelegateProtocol {
+    func navigateToProductViewWithData(_ data: SearchDTO) {
+        coordinator?.showProductsViewWithData(data)
+    }
+    
+    func showErrorEmptySearchText() {
+        showErrorWithMessage(Constants.ErrorMessages.emptySearchText)
     }
 }

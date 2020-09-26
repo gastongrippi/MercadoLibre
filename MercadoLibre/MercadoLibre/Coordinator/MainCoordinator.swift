@@ -23,7 +23,7 @@ class MainCoordinator: CoordinatorProtocol {
     }
 
     func showProductDetailWithData(_ data: ProductDTO) {
-        let service = ProductsService()
+        let service = ProductDetailService()
         let presenter = ProductDetailPresenter(service: service)
         let viewController = ProductDetailView(delegate: presenter, productData: data)
         viewController.coordinator = self

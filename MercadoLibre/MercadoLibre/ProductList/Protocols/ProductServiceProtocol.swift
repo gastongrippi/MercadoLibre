@@ -8,5 +8,4 @@
 
 protocol ProductServiceProtocol {
     func getProductsWithName(_ name:String, successBlock: @escaping (ProductResponse) -> (), errorBlock: @escaping (Error) -> ())
-    func getProductDetailWithId(_ id: String, successBlock: @escaping (ProductDetail) -> (), errorBlock: @escaping (Error) -> ())
 }
