@@ -23,6 +23,7 @@ class ProductsPresenter: ProductsDelegateProtocol {
     func loadProducts(_ products: String) {
         self.products = []
         service?.getProductsWithName(products, successBlock: { [weakSelf=self] response in
+            weakSelf.view?.stopLoadingIndicator()
             if (response.results.isEmpty) {
                 weakSelf.view?.showEmptyProductsError()
             } else {
@@ -32,6 +33,7 @@ class ProductsPresenter: ProductsDelegateProtocol {
                 weakSelf.view?.reloadProductsTable()
             }
         }, errorBlock: { [weakSelf=self] error in
+            weakSelf.view?.stopLoadingIndicator()
             weakSelf.view?.showErrorConnectionProblem()
         })
     }

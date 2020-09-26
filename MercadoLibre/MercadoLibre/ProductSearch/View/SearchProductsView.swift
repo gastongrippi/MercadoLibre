@@ -29,8 +29,8 @@ class SearchProductsView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customizeView()
-        customizeImage()
-        customizeSearchBar()
+        customizeMercadoLibreLogo()
+        customizeProductSearchBar()
         setDelegates()
         setViewsConstraints()
     }
@@ -41,12 +41,12 @@ class SearchProductsView: UIViewController {
         view.backgroundColor = Constants.Branding.primaryColor
     }
     
-    private func customizeImage() {
+    private func customizeMercadoLibreLogo() {
         mercadoLibreLogo.translatesAutoresizingMaskIntoConstraints = false
         mercadoLibreLogo.image = UIImage(named: "welcomeMercadoLibre")
     }
     
-    private func customizeSearchBar() {
+    private func customizeProductSearchBar() {
         productsSearchBar.translatesAutoresizingMaskIntoConstraints = false
         productsSearchBar.searchTextField.layer.cornerRadius = 20
         productsSearchBar.searchTextField.layer.masksToBounds = true

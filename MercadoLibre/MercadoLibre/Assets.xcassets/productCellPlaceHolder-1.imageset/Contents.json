@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "productCellPlaceHolder.jpg",
+      "filename" : "productCellPlaceHolder2.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "productCellPlaceHolder-1.jpg",
+      "filename" : "productCellPlaceHolder2-1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "productCellPlaceHolder-2.jpg",
+      "filename" : "productCellPlaceHolder2-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

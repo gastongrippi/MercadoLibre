@@ -12,4 +12,6 @@ protocol ProductsViewDelegateProtocol: class {
     func reloadProductsTable()
     func showEmptyProductsError()
     func showErrorConnectionProblem()
+    func startLoadingIndicator()
+    func stopLoadingIndicator()
 }

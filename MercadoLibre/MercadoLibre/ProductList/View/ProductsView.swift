@@ -13,6 +13,7 @@ class ProductsView: UIViewController {
     // MARK: Properties
     weak var coordinator: MainCoordinator?
     private var productsTableView = UITableView(frame: .zero)
+    private var loadingIndicator = UIActivityIndicatorView()
     var productViewDelegate: ProductsDelegateProtocol?
     private var searchData: SearchDTO?
     
@@ -34,6 +35,7 @@ class ProductsView: UIViewController {
         title = Constants.Titles.products
         setDelegates()
         customizeProductTableView()
+        customizeloadingIndicator()
         setViewsConstraints()
         loadProducts()
     }
@@ -50,6 +52,13 @@ class ProductsView: UIViewController {
         productsTableView.register(ProductsTableViewCell.self, forCellReuseIdentifier: Constants.ProductsTable.reuseIdentifier)
     }
     
+    private func customizeloadingIndicator() {
+        loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
+        loadingIndicator.style = .large
+        loadingIndicator.backgroundColor = .white
+        loadingIndicator.hidesWhenStopped = true
+    }
+    
     private func setViewsConstraints() {
         view.addSubview(productsTableView)
         NSLayoutConstraint.activate([
@@ -58,10 +67,19 @@ class ProductsView: UIViewController {
             productsTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: getNavigationBarHeight()),
             productsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+        
+        view.addSubview(loadingIndicator)
+        NSLayoutConstraint.activate([
+            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadingIndicator.heightAnchor.constraint(equalToConstant: 100),
+            loadingIndicator.widthAnchor.constraint(equalToConstant: 100)
+        ])
     }
     
     private func loadProducts() {
         if let searchText = searchData?.searchText {
+            startLoadingIndicator()
             productViewDelegate?.loadProducts(searchText)
         } else {
             self.showErrorEmptySearchText()
@@ -98,6 +116,18 @@ extension ProductsView: ProductsViewDelegateProtocol {
             self.showErrorWithMessage(Constants.ErrorMessages.internetConnectionFailed, completionBlock: { [weakSelf=self] in
                 weakSelf.coordinator?.navigationController?.popViewController(animated: true)
             })
+        }
+    }
+    
+    func startLoadingIndicator() {
+        DispatchQueue.main.async { [unowned self] in
+            self.loadingIndicator.startAnimating()
+        }
+    }
+    
+    func stopLoadingIndicator() {
+        DispatchQueue.main.async { [unowned self] in
+            self.loadingIndicator.stopAnimating()
         }
     }
 }
