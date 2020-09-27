@@ -33,10 +33,11 @@ class SearchProductsView: UIViewController {
         customizeMercadoLibreLogo()
         customizeProductSearchBar()
         setDelegates()
+        addKeyboardObservers()
         setViewsConstraints()
     }
 
-    //MARK: private methods
+    //MARK: private methods - Customization
     private func customizeView() {
         title = Constants.Titles.welcome
         view.backgroundColor = Constants.Branding.primaryColor
@@ -57,7 +58,8 @@ class SearchProductsView: UIViewController {
     private func setDelegates() {
         productsSearchBar.delegate = self
     }
-
+    
+    //MARK: private methods - Constraints
     private func setViewsConstraints() {
         view.addSubview(mercadoLibreLogo)
         NSLayoutConstraint.activate([
@@ -74,6 +76,29 @@ class SearchProductsView: UIViewController {
             productsSearchBar.topAnchor.constraint(equalTo: mercadoLibreLogo.bottomAnchor, constant: Constants.Constraint.generalPadding),
             productsSearchBar.heightAnchor.constraint(equalToConstant: Constants.Constraint.searchBarHeight)
         ])
+    }
+    
+    //MARK: private methods - Keyboard events
+    private func addKeyboardObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(SearchProductsView.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SearchProductsView.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+           // if keyboard size is not available for some reason, dont do anything
+           return
+        }
+        let bottomOfTextField = productsSearchBar.convert(productsSearchBar.bounds, to: self.view).maxY;
+        let topOfKeyboard = self.view.frame.height - keyboardSize.height
+
+        if bottomOfTextField > topOfKeyboard {
+            self.view.frame.origin.y = 0 - keyboardSize.height
+        }
+    }
+
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        self.view.frame.origin.y = 0
     }
 }
 

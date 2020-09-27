@@ -29,9 +29,7 @@ extension ProductsPresenter: ProductsDelegateProtocol {
             if (response.results.isEmpty) {
                 weakSelf.view?.showEmptyProductsError()
             } else {
-                for product in response.results {
-                    weakSelf.products.append(product)
-                }
+                weakSelf.products = response.results.map{ $0 }
                 weakSelf.view?.reloadProductsTable()
             }
         }, errorBlock: { [weakSelf=self] error in
