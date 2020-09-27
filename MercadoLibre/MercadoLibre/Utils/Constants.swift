@@ -17,6 +17,7 @@ struct Constants {
     }
     
     struct Constraint {
+        static let generalPadding: CGFloat = 50
         static let searchBarHeight: CGFloat = 50
     }
     

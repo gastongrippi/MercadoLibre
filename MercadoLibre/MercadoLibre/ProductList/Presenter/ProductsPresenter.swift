@@ -7,7 +7,7 @@
 //
 import Foundation
 
-class ProductsPresenter: ProductsDelegateProtocol {
+class ProductsPresenter {
     
     //MARK: Properties
     lazy private var products = [Product]()
@@ -18,8 +18,10 @@ class ProductsPresenter: ProductsDelegateProtocol {
     init(service: ProductServiceProtocol) {
         self.service = service
     }
-    
-    //MARK: ProductsPresenterDelegateProtocol
+}
+
+//MARK: ProductsPresenterDelegateProtocol
+extension ProductsPresenter: ProductsDelegateProtocol {
     func loadProducts(_ products: String) {
         self.products = []
         service?.getProductsWithName(products, successBlock: { [weakSelf=self] response in

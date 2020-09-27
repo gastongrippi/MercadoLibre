@@ -9,8 +9,10 @@
 import Foundation
 
 class SearchProductsPresenter: SearchProductsDelegateProtocol {
+    //MARK: Properties
     weak var view: SearchProductsViewDelegateProtocol?
     
+    //MARK: SearchProductsDelegateProtocol
     func sendSearchText(_ searchText: String?) {
 
         guard let searchText = searchText else {

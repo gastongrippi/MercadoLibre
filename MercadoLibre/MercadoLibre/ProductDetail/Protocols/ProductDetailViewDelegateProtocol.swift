@@ -6,8 +6,6 @@
 //  Copyright © 2020 Gaston Daniel Gabriel Grippi. All rights reserved.
 //
 
-import Foundation
-
 protocol ProductDetailViewDelegateProtocol: class {
     func reloadProductDescription()
 }

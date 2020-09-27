@@ -9,7 +9,6 @@
 import Foundation
 
 struct ProductDetail: Codable {
-    //MARK: Properties
     let productDescription: String
     
     enum CodingKeys: String, CodingKey {

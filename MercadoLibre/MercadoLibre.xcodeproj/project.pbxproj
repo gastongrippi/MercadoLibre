@@ -267,7 +267,6 @@
 		6A36F854251FCF68002FE2EE /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
-				6A782805251D579F005EADFC /* DTO */,
 				6AC579B22517E11A00592CAD /* Model */,
 				6AC579B12517E11400592CAD /* View */,
 				6AC579B02517E10F00592CAD /* Presenter */,
@@ -275,13 +274,6 @@
 				6AC579AF2517E10700592CAD /* Protocols */,
 			);
 			path = ProductDetail;
-			sourceTree = "<group>";
-		};
-		6A782805251D579F005EADFC /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DTO;
 			sourceTree = "<group>";
 		};
 		6AC5797F2517E00F00592CAD = {

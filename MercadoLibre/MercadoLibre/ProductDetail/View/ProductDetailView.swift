@@ -88,6 +88,7 @@ class ProductDetailView: UIViewController {
     }
 }
 
+//MARK: ProductDetailViewDelegateProtocol
 extension ProductDetailView: ProductDetailViewDelegateProtocol {
     func reloadProductDescription() {
         DispatchQueue.main.async {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ProductDetailPresenter: ProductDetailDelegateProtocol {    
+class ProductDetailPresenter {    
     
     //MARK: Properties
     private var productDetail: ProductDetail?
@@ -19,8 +19,10 @@ class ProductDetailPresenter: ProductDetailDelegateProtocol {
     init(service: ProductDetailServiceProtocol) {
         self.service = service
     }
-    
-    //MARK: ProductDetailProtocol
+}
+
+//MARK: ProductDetailDelegateProtocol
+extension ProductDetailPresenter: ProductDetailDelegateProtocol {
     func loadProductDetailWithId(_ id: String) {
         service?.getProductDetailWithId(id, successBlock: { [weakSelf=self] (response) in
             weakSelf.productDetail = response

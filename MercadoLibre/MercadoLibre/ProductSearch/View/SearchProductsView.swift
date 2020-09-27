@@ -9,6 +9,7 @@
 import UIKit
 
 class SearchProductsView: UIViewController {
+    //MARK: Properties
     weak var coordinator: MainCoordinator?
     private var mercadoLibreLogo = UIImageView(frame: .zero)
     private var productsSearchBar = UISearchBar(frame: .zero)
@@ -61,28 +62,29 @@ class SearchProductsView: UIViewController {
         view.addSubview(mercadoLibreLogo)
         NSLayoutConstraint.activate([
             mercadoLibreLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            mercadoLibreLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: getNavigationBarHeight()+50),
+            mercadoLibreLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: getNavigationBarHeight() + Constants.Constraint.generalPadding),
             mercadoLibreLogo.heightAnchor.constraint(equalToConstant: 150),
             mercadoLibreLogo.widthAnchor.constraint(equalToConstant: 300)
         ])
         
         view.addSubview(productsSearchBar)
         NSLayoutConstraint.activate([
-            productsSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            productsSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            productsSearchBar.topAnchor.constraint(equalTo: mercadoLibreLogo.bottomAnchor, constant: 50),
+            productsSearchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.Constraint.generalPadding),
+            productsSearchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Constraint.generalPadding),
+            productsSearchBar.topAnchor.constraint(equalTo: mercadoLibreLogo.bottomAnchor, constant: Constants.Constraint.generalPadding),
             productsSearchBar.heightAnchor.constraint(equalToConstant: Constants.Constraint.searchBarHeight)
         ])
     }
 }
 
-
+//MARK: UISearchBarDelegate
 extension SearchProductsView: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchProductsViewDelegate?.sendSearchText(searchBar.text)
     }
 }
 
+//MARK: SearchProductsViewDelegateProtocol
 extension SearchProductsView: SearchProductsViewDelegateProtocol {
     func navigateToProductViewWithData(_ data: SearchDTO) {
         coordinator?.showProductsViewWithData(data)

@@ -95,7 +95,7 @@ class ProductsView: UIViewController {
     }
 }
 
-
+//MARK: ProductsViewDelegateProtocol
 extension ProductsView: ProductsViewDelegateProtocol {
     func reloadProductsTable() {
         DispatchQueue.main.async { [unowned self] in

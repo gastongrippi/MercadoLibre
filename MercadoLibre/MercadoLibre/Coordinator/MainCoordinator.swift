@@ -9,6 +9,7 @@
 import UIKit
 
 class MainCoordinator: CoordinatorProtocol {
+    //MARK: Properties
     var navigationController: UINavigationController?
 
     //MARK: CoordinatorProtocol
@@ -33,8 +34,9 @@ class MainCoordinator: CoordinatorProtocol {
 
 }
 
+//MARK: Private creational methods
 extension MainCoordinator {
-    func createSearchProductsView() -> UIViewController {
+    private func createSearchProductsView() -> UIViewController {
         let presenter = SearchProductsPresenter()
         let viewController = SearchProductsView(delegate: presenter)
         presenter.view = viewController
@@ -43,7 +45,7 @@ extension MainCoordinator {
         return viewController
     }
     
-    func createProductsView(data: SearchDTO) -> UIViewController {
+    private func createProductsView(data: SearchDTO) -> UIViewController {
         let service = ProductsService()
         let presenter = ProductsPresenter(service: service)
         let viewController = ProductsView(delegate: presenter, searchData: data)
